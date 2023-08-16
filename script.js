@@ -61,7 +61,7 @@ gsap.to('#inner-page2',{
   scrollTrigger:{
         trigger:'#inner-page2',
         scroller:'#main',
-        start:'top 30%',
+        start:'top 18%',
         end:'100% top',
         // markers:true,
         pin:true
@@ -80,18 +80,15 @@ gsap.to('nav',{
   duration:1
 })
 
-// let tl1 = gsap.timeline({
-//   scrollTrigger:{
-//             trigger:'#page2',
-//             scroller:'#main',
-//             start:'top 0%',
-//             end:'100% top',
-//             markers:true,
-//             // pin:true,
-//             scrub:.1
-//           },
-//           stagger:.1
-// })
-// tl1.to('nav',{
-//   y:-100
-// })
+// page3
+gsap.to('#page3',{
+  scrollTrigger:{
+    trigger:'#inner-page3',
+    scroller:'#main',
+    start:'top 10%',
+    end:'bottom top',
+    markers:true,
+    scrub:.15,
+    pin:true
+  }
+})
