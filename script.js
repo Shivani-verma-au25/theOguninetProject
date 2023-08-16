@@ -30,3 +30,68 @@ ScrollTrigger.refresh();
 
 }
 loco()
+
+
+// *************** gsap*************************
+
+// let tl = gsap.timeline({
+//   scrollTrigger:{
+//     trigger:'#hero',
+//     scroller:'#main',
+//     start:'top 0%',
+//     end:'400% top',
+//     markers:true,
+//     pin:true
+//   }
+// })
+gsap.to('#hero',{
+  scrollTrigger:{
+        trigger:'#hero',
+        scroller:'#main',
+        start:'top 0%',
+        end:'400% top',
+        // markers:true,
+        pin:true
+      }
+})
+
+
+// page2
+gsap.to('#inner-page2',{
+  scrollTrigger:{
+        trigger:'#inner-page2',
+        scroller:'#main',
+        start:'top 30%',
+        end:'100% top',
+        // markers:true,
+        pin:true
+      }
+})
+gsap.to('nav',{
+  scrollTrigger:{
+    trigger:'page2',
+    scroller:'#main',
+    start:'top top',
+    end:'bottom 0',
+    scrub:.15,
+    markers:true
+  },
+  y:-200,
+  duration:1
+})
+
+// let tl1 = gsap.timeline({
+//   scrollTrigger:{
+//             trigger:'#page2',
+//             scroller:'#main',
+//             start:'top 0%',
+//             end:'100% top',
+//             markers:true,
+//             // pin:true,
+//             scrub:.1
+//           },
+//           stagger:.1
+// })
+// tl1.to('nav',{
+//   y:-100
+// })

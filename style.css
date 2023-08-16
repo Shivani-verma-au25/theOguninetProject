@@ -25,24 +25,32 @@ html,body{
     --bg-color:#ffffff;
     --text-color:#000000;
     --gray-text-color:#a0a0a0;
+    --page-color:#1d3e39;
 }
 #main{
-
+position: relative;
 }
 /* ************ page1***************** */
 #page1{
     width: 100vw;
     height: 100vh;
-    position: relative;
+    /* position: relative; */
+    background-color: peru;
+    position: sticky;
+    top: 10%;
+    /* z-index: 99; */
 }
 nav{
     width: 100%;
     height: 20%;
-    /* background-color: red; */
+    /* background-color: green; */
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 3vw;
+    z-index: 999;
+    position: absolute;
+    top: 0;
 }
 #left{
     width: 20%;
@@ -100,16 +108,146 @@ nav{
     border-bottom: .1vw solid var(--text-color);
     font-weight: 900;
 }
+#first-h4{
+    color: var(--gray-text-color);
+}
 #hero{
     width: 100%;
-    height: calc(100% - 20%);
-    background-color: black;
+    height: 100%;
+    background-color: var(--bg-color);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#inner-text{
+    width: 66%;
+    height: 60%;
+    background-color: red;
+    margin-top: 9vw;
+    
+}
+#inner-text>h2{
+    font-family: c;
+    font-size: 5.5vw;
+    line-height: 1.1;
+}
+#inner-text>h2>span{
+    font-family: a;
+    font-size: 2vw;
+}
+#inner-text>h2>#xo{
+    font-family: c;
+    font-size: 5.5vw;
+    position: relative;
+}
+#text-linetrow{
+    width: 15%;
+    height: 15%;
+    /* background-color: yellow; */
+    position: relative;
+    bottom: 20%;
+}
+#text-linetrow>img{
+    width: 100%;
+    /* height: 100%; */
+    object-fit: cover;
+    margin-top: 1vw;
+
+
 }
 /* ************ Page2**************** */
 #page2{
     width: 100vw;
     height: 100vh;
     position: relative;
-    background-color: paleturquoise;
-    
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    background-color: rebeccapurple;
+}
+#inner-page2{
+    width:72%;
+    height: 85%;
+    /* width: 66%;
+    height: 80%; */
+    background-color: var(--page-color);
+    padding: 2vw;
+    display:flex ;
+    gap: 1vw;
+}
+#image-container{
+    width: 60%;
+    height: 100%;
+    /* background-color: #000000; */
+    border-radius: 50% 50% 0 0;
+    position: relative;
+}
+#image-container>img{
+    width: 100%;
+    height: 100%;
+    object-position: 0%;
+    /* object-fit: cover; */
+}
+#text-container{
+    width: 40%;
+    height: 100%;
+    /* background-color: red; */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 16vw;
+}
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+label{
+    font-size: 4vw;
+    font-family: b;
+    text-transform: capitalize;
+    color: var(--bg-color);
+}
+input{
+    background-color: transparent;
+    width: 100%;
+    padding: .5vw 0;
+    margin-bottom: 1vw;
+    border: none;
+    border-bottom: .2vw solid var(--bg-color);
+}
+::placeholder {
+  color: var(--bg-color);
+  font-family: a;
+  font-size: 2vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 3vw;
+}
+#text-container>img{
+    width: 50%;
+    margin-left: 8vw;
+}
+
+
+
+
+
+
+#page3{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-color: palegreen;  
+}
+#page4{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-color: palevioletred;  
 }
