@@ -44,51 +44,116 @@ loco()
 //     pin:true
 //   }
 // })
-gsap.to('#hero',{
+gsap.to('#page1',{
   scrollTrigger:{
         trigger:'#hero',
         scroller:'#main',
-        start:'top 0%',
-        end:'400% top',
+        start:'top 18%',
+        end:'600% top',
         // markers:true,
         pin:true
       }
 })
 
-
-// page2
-gsap.to('#inner-page2',{
+gsap.to('#page2',{
   scrollTrigger:{
         trigger:'#inner-page2',
         scroller:'#main',
-        start:'top 18%',
-        end:'100% top',
+        start:'top 19%',
+        end:'400% top',
         // markers:true,
         pin:true
-      }
+      },
 })
 gsap.to('nav',{
   scrollTrigger:{
-    trigger:'page2',
+    trigger:'#page2',
     scroller:'#main',
-    start:'top top',
-    end:'bottom 0',
-    scrub:.15,
-    markers:true
+    start:'top 80%',
+    end:'bottom top',
+    // markers:true,
+    scrub:.15
   },
   y:-200,
   duration:1
 })
-
-// page3
 gsap.to('#page3',{
   scrollTrigger:{
-    trigger:'#inner-page3',
-    scroller:'#main',
-    start:'top 10%',
-    end:'bottom top',
-    markers:true,
-    scrub:.15,
-    pin:true
-  }
+        trigger:'#inner-page3',
+        scroller:'#main',
+        start:'top 19%',
+        end:'500% top',
+        // markers:true,
+        pin:true
+      }
 })
+gsap.to('#page4',{
+  scrollTrigger:{
+        trigger:'#inner-page4',
+        scroller:'#main',
+        start:'top 19%',
+        end:'0% top',
+        // markers:true,
+        pin:true
+      }
+})
+
+
+// page5 lines
+
+gsap.to('.line',{
+  scrollTrigger:{
+    trigger:'.line',
+    scroller:'#main',
+    start:'top 50%',
+    end:'bottom 0%',
+    // markers:true,
+    scrub:3
+  },
+  width:'100%',
+  opacity:1,
+  duration:1,
+  stagger:.25
+})
+
+
+// // page2
+// gsap.to('#inner-page2',{
+//   scrollTrigger:{
+//         trigger:'#inner-page2',
+//         scroller:'#main',
+//         start:'top 18%',
+//         end:'bottom top',
+//         // markers:true,
+//         pin:true,
+//         scrub:.15
+//       }
+// })
+// gsap.to('nav',{
+//   scrollTrigger:{
+//     trigger:'page2',
+//     scroller:'#main',
+//     start:'top top',
+//     end:'bottom 0',
+//     scrub:.15,
+//     markers:true
+//   },
+//   y:-200,
+//   duration:1
+// })
+
+// *************** nav animation img**********
+
+let imgNav = document.querySelector('#circle-img-2')
+// console.log(imgNav);
+imgNav.addEventListener('mouseover',function(){
+  imgNav.style.rotate = '0deg'
+})
+imgNav.addEventListener('mouseleave',function(){
+  imgNav.style.rotate = '10deg'
+})
+
+// lines page-5
+
+
+
