@@ -87,13 +87,92 @@ nav{
     justify-content: space-between;
     gap: .5vw;
     text-transform: capitalize;
+    position: relative;
+}
+#right>#svgwork{
+    width: 24%;
+    height: 50%;
+    background-color: red;
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    z-index: 999;
+}
+#svgwork>svg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    fill: #1d3e39;
+}
+#right>#svgabout{
+    width: 24%;
+    height: 50%;
+    background-color: greenyellow;
+    position: absolute;
+    top: 100%;
+    left: 28%;
+    z-index: 999;
+}
+#svgabout>svg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    fill: #1d3e39;
+}
+#right>#svgmain{
+    width: 24%;
+    height: 50%;
+    background-color: violet;
+    position: absolute;
+    top: 100%;
+    left: 53%;
+    z-index: 999;
+}
+#svgmain>svg{
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0; 
+    fill: #000000;
+    z-index: 9999;
+    object-fit: cover;
+}
+#svgmain:hover svg{
+    animation-name: move;
+    animation-duration: .5s;
+    animation-timing-function: linear;
+    fill: #000000;
+    opacity: 0;
+}
+
+@keyframes move {
+    0%{
+        width: 0%;
+        fill: #000000;
+        fill-opacity: 0;
+    }
+    100%{
+        width: 100%;
+        fill: #000000;
+        fill-opacity: 1;
+    }
+}
+
+
+#right>h2:hover{
+
 }
 #right>h2>a{
     text-decoration: none;
     color: var(--text-color);
     font-family: b;
     font-size: 1.1vw;
-    border-bottom: .1vw solid var(--text-color);
+    /* border-bottom: .1vw solid var(--text-color); */
 }
 #inner-ryt{
     display: flex;
@@ -632,7 +711,7 @@ input{
 #page6{
     width: 100vw;
     height: 100vh;
-    background-color: palevioletred;
+    background-color: var(--bg-color);
     position: relative;
     display: flex;
     align-items: center;
@@ -647,26 +726,49 @@ input{
     display: flex;
     align-items: center;
     justify-content: center; 
+    /* flex-direction: column;
+    position: absolute; */
+
 }
 #inner-text-p6{
     width: 70%;
-    height: 80%;
-    background-color: yellow;
+    height: 100%;
+    /* background-color: yellow; */
     display: flex;
     align-items: center;
     justify-content: center; 
     flex-direction: column;
     rotate: 0deg;
-    position: relative;
+    overflow: hidden;
+    /* position: relative;
+    z-index: 99999; */
 }
 #inner-text-p6>h1{
-    font-size: 4vw;
-    font-family: d;
+    font-size: 6vw;
+    font-family: c;
     text-transform: capitalize;
-    font-weight:900;
+    /* font-weight:700; */
+    line-height: 1;
+    letter-spacing: -.1vw; 
+    border-bottom: .2vw solid var(--text-color);
 }
-#inner-text-p6>a{
-    text-decoration: none;
+#inner-text-p6>h1:nth-child(2){
+    margin-bottom: 12vw;
+    /* font-family: d; */
+    text-transform: lowercase;
+    /* font-weight:900; */
+}
+.btn-container{
+    width: 15%;
+    height: 10%;
+    /* background-color: red; */
+    position: absolute;
+    top: 66%;
+    z-index: 9999;
+    overflow: hidden;
+}
+.btn-a{
+    text-align: center;
     color: var(--bg-color);
     font-size: 1.2vw;
     font-family: b;
@@ -674,10 +776,13 @@ input{
     padding: 1vw 2vw;
     border-radius: 1vw;
     text-transform: capitalize;
-    margin-top: 3vw;
-    transition: all .3s ease;
+    transition: all .3s ease; 
 }
-#inner-text-p6>a:hover{
+.btn-a>a{
+    text-decoration: none;
+    color: var(--bg-color);
+}
+.btn-container>.btn-a:hover{
     border-radius: 50px;
 }
 #inner-text-p6>img{
@@ -686,4 +791,61 @@ input{
     left: 48%;
     width: 20%;
     rotate: 12deg;
+}
+
+/*  */
+#arrow-image{
+    width: 15%;
+    height: 25%;
+    /* background-color: rebeccapurple; */
+    position: absolute;
+    left: 63%;
+    top: 73%;
+}
+#arrow-image>h3{
+    font-family: a;
+    text-align: center;
+    font-size: 1.4vw;
+}
+/* #image-container{
+    width: 100%;
+    height: 100%;
+    background-color: rebeccapurple;
+} */
+#inner-p6>img{
+    width: 55%;
+    height: 70%;
+    object-fit: cover;
+    object-position: center;
+}
+
+#inner-p6>#p-6-img1{
+    position: absolute;
+    top: 110%;
+    left: 5%;
+    rotate: 10deg;
+    transition: all .7s ease;
+}
+#inner-p6>#p-6-img2{
+    position: absolute;
+    top: 110%;
+    rotate: -2deg;
+    transition: all .9s ease;
+    
+}
+#inner-p6>#p-6-img3{
+    position: absolute;
+    top: 120%;
+    left:80%;
+    /* rotate: 3deg; */
+    transition: all .9s ease;
+}
+
+/* ******** footer ************** */
+#footer{
+    width: 100%;
+    height: 15%;
+    background-color: yellow;
+    position: absolute;
+    top: 0;
 }

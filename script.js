@@ -116,6 +116,52 @@ gsap.to('.line',{
   stagger:.25
 })
 
+// ************** page 6 a****************
+let touch = document.querySelector('#inner-p6 a')
+let img1 = document.querySelector('#p-6-img1')
+let img2 = document.querySelector('#p-6-img2')
+let img3 = document.querySelector('#p-6-img3')
+console.log(img1);
+// pic1
+touch.addEventListener('mouseenter',function(){
+  img1.style.top = '45%';
+  img1.style.left = '30%';
+  // img1.style.rotate = '15deg';
+  // gsap.to('img1',{
+  //   y:'20%',
+  //   duration:1,
+  //   stagger:.25
+  // })
+  
+})
+touch.addEventListener('mouseleave',function(){
+  img1.style.top = '110%'
+  img1.style.left = '-5%';
+
+})
+// pic2
+touch.addEventListener('mouseenter',function(){
+  img2.style.top = '40%';
+  // img3.style.rotate = '-10deg';
+})
+touch.addEventListener('mouseleave',function(){
+  img2.style.top = '110%'
+})
+// pic3
+touch.addEventListener('mouseenter',function(){
+  img3.style.top = '40%';
+  img3.style.left = '30%';
+  img3.style.rotate = '-15deg';
+  
+})
+touch.addEventListener('mouseleave',function(){
+  img3.style.top = '110%'
+  img3.style.left = '80%';
+
+})
+
+
+
 
 // // page2
 // gsap.to('#inner-page2',{
