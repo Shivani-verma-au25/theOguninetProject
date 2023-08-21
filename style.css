@@ -602,6 +602,10 @@ input{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    /* transition: all 300ms ease; */
+    /* opacity: 0;  */
+    /* animation: moveitback 400ms ease forwards; */
+    /* will-change: transform; */
 }
 
 #txt-p5>h1{
@@ -614,12 +618,14 @@ input{
 }
 #txt-p5>p{
     width: fit-content;
-    /* background-color: rebeccapurple; */
+    background-color: rebeccapurple;
     font-size: 1.2vw;
     font-family: b;
     font-weight: 500;
     color: var(--bg-color);
-    transition: all .2s ease;
+    /* transition: all .2s ease; */
+    /* transition: all 300ms ease; */
+    
 }
 #txt-p5>img{
     max-width: 100%;
@@ -627,30 +633,76 @@ input{
     display: inline-block;
 }
 #txt-p5>p:hover{
+    
+}
+/* #txt-p5>p:hover{
     transform: translate3d(0px, -4.333px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;
 
+} */
+#cntr-txt{
+    width: 30%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    /* background-color: #1d3e39; */
+    transition: all 300ms ease;
+    cursor: pointer;
 }
-#txt-p5>p>span>i{
-    font-size: 1.4vw;
-    padding-left: 1vw;
+#cntr-txt>img{
+    width: 100%;
+}
+#cntr-txt:hover #icon{
+    opacity: 1;
+    animation: moveit .9s ease;
+    will-change: transform;
+    animation-delay: .6s;
+}
+#cntr-txt>#spring:hover{
+    opacity: 1; 
+    animation: moveitback .5s ease;
+    will-change: transform;
+}
+#cntr-txt:hover i{
+    animation-name: rotation;
+    animation-duration: .7s;
+    animation-delay: .6s;
+    animation-timing-function: linear;
+}
+#cntr-txt>#icon{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* background-color: red; */
+    margin-top: 2vw;
+}
+#icon>p{
+    font-family: b;
     color: var(--bg-color);
+    font-size: 1.2vw;
+    padding: .3vw .4vw;
 }
-#txt-p5>#icon{
-    background-color: red;
+#icon>i{
+    color: var(--bg-color);
+    font-size: 1.4vw;
 }
-#txt-p5>#icon:hover{
-    transform: rotateX('180deg');
-    position: absolute;
+@keyframes rotation {
+    0%{
+        rotate: 0deg;
+    }
+    100%{
+        rotate: 360deg;
+    }
+    
 }
-#txt-p5:hover #txt-p5>i{
-    rotate: 360deg;
-    /* transform: translate3d(0px, -0.89876px, 0px) scale3d(1, 1, 1) rotateX(360deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); */
-     /* transform-style: preserve-3d; will-change: transform; */
-}
-#txt-p5>img:hover{
-    will-change: transform; transform: translate3d(0.3342px, -0.265px, 1.2322px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(9deg) skew(0deg, 0deg); 
-    transform-style: preserve-3d;
-}
+/* #txt-p5>img:hover{
+    opacity: 1; 
+    animation: moveitback .5s ease;
+    will-change: transform;
+} */
 #center-p5>#right-p5{
     width: 25%;
     height: 80%;
@@ -668,38 +720,61 @@ input{
     rotate: 8deg;
     margin-bottom: 4vw;
 }
-#txt-p5>p:hover{
-    animation-name: jump;
-    animation-duration: 3s;
-    animation-timing-function: ease-in-out;
-    /* transform: translate3d(0px, 0px, 0px)scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg)skew(0deg, 0deg);
-    transform-style: preserve-3d; */
+#icon:hover{
+    /* opacity: 1;
+    animation: moveit .9s ease;
+    will-change: transform; */
+}
+#txt-p5>img:hover+#icon>p{
+    opacity: 1;
+    animation: moveit .9s ease;
+    will-change: transform;
 }
 
-/* @keyframes jump {
+@keyframes moveit {
+    0% { transform: translateY(0) scale3d(0.96,0.96,1); }
+    20% { transform: translateY(-50px) scale3d(1.1,1.1,1); }
+    40% { transform: translateY(-30px) scale3d(0.98,0.98,1); }
+    /* 60% { transform: translateY(-22px) scale3d(1.05,1.05,1); } */
+    /* 80% { transform: translateY(-50px) scale3d(1.01,1.01,1); } */
+    100% { transform: translateY(-50px) scale3d(1,1,1); }
+  }
+  
+  @keyframes moveitback {
+    0% { transform: translateY(-10%); }
+    /* 100% { transform: translateY(0) scale3d(0.96,0.96,1); } */
+    100% { transform: translateY(0) scale3d(0.9,0.6,1); }
+  }
+  
+  @keyframes scale {
+    0% { transform: scale3d(0.96,0.96,1); }
+    100% { transform: scale3d(1,1,1); }
+  }
+
+@keyframes jump {
     0%{
-        transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;
+        /* transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; */
         /* transform: translate3d(0px, 0px, 0px)scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg)skew(0deg, 0deg);  */
-        /* will-change: transform; transform: translate3d(0px, 11.3683px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(9deg) skew(0deg, 0deg); transform-style: preserve-3d; 
+         /* will-change: transform; transform: translate3d(0px, 11.3683px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(9deg) skew(0deg, 0deg); transform-style: preserve-3d;  */
 
     } 
     25%{
         /* transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; */
         /* transform: translate3d(0px, 0px, 0px)scale3d(1.1, 1.1, 1.1) rotateX(0deg) rotateY(0deg) rotateZ(20deg)skew(0deg, 0deg); */
-        /* will-change: transform; transform: translate3d(0px, 11.3683px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(9deg) skew(0deg, 0deg); transform-style: preserve-3d; 
+         /* will-change: transform; transform: translate3d(0px, 11.3683px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(9deg) skew(0deg, 0deg); transform-style: preserve-3d;  */
     }
     50%{
         /* transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; */
-        /* will-change: transform; transform: translate3d(13.7690px, 1.30443px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(9deg) skew(0deg, 0deg); transform-style: preserve-3d; 
+        /* will-change: transform; transform: translate3d(13.7690px, 1.30443px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(9deg) skew(0deg, 0deg); transform-style: preserve-3d;  */
     }
     75%{
-        /* will-change: transform; transform: translate3d(13.7690px, 1.30443px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(9deg) skew(0deg, 0deg); transform-style: preserve-3d;
+         /* will-change: transform; transform: translate3d(13.7690px, 1.30443px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(9deg) skew(0deg, 0deg); transform-style: preserve-3d; */
 
     }
     100%{ 
 
     } 
-} */
+}
 /* style="transform: translate3d(0px, -0.0944px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; will-change: transform;" */
 
 /* will-change: transform; transform: translate3d(0px, 11.3683px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(9deg) skew(0deg, 0deg); transform-style: preserve-3d; */
@@ -716,6 +791,41 @@ input{
     display: flex;
     align-items: center;
     justify-content: center;
+    /* flex-direction: column; */
+}
+#page6>#links{
+    width: 100%;
+    height: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 90%;
+    padding: 0 2vw;
+    z-index: 999;
+}
+#links>#left{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5vw; 
+}
+#left>h6{
+    font-size: 1vw;
+    font-family: b;
+    color: var(--gray-text-color);
+    transition: all .4s ease;
+}
+#right>h6{
+    font-size: 1vw;
+    font-family: b;
+    color: var(--gray-text-color);
+    transition: all .4s ease;
+    margin-right: 2vw;
+}
+#left>h6:hover, #right>h6:hover{
+    color: var(--text-color);
+    cursor: pointer;
 }
 #inner-p6{
     width: 90%;
@@ -739,7 +849,7 @@ input{
     justify-content: center; 
     flex-direction: column;
     rotate: 0deg;
-    overflow: hidden;
+    /* overflow: hidden; */
     /* position: relative;
     z-index: 99999; */
 }
@@ -841,11 +951,3 @@ input{
     transition: all .9s ease;
 }
 
-/* ******** footer ************** */
-#footer{
-    width: 100%;
-    height: 15%;
-    background-color: yellow;
-    position: absolute;
-    top: 0;
-}
