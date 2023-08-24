@@ -950,12 +950,57 @@ input{
 }
 
 /* *************** Send Card ***************** */
-#send-card-container{
+#container{
     width: 100vw;
     height: 100vh;
-    background-color: greenyellow;
+    background-color: red;
+}
+#img-container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+   
+}
+#img-container>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: fixed;
+}
+#inner-card-page{
+    width: 100vw;
+    height: 130vh;
+    background-color: rebeccapurple;
+    position: sticky;
+    top: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
+#wrapper-card{
+    width: 90%;
+    height: 70%;
+    background-color: red;
+    margin-top: 6vw;
+}
 
-
-
+#message-card-link{
+    width: 100%;
+    position: relative;
+}
+#message-card-link>#links{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3vw;
+    padding: 0 3vw;
+}
+#links>#left>.msg-card{
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+}
