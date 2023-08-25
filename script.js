@@ -160,6 +160,9 @@ touch.addEventListener('mouseleave',function(){
 
 })
 
+// card select option
+
+
 
 
 
