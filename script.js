@@ -116,6 +116,20 @@ gsap.to('.line',{
   stagger:.25
 })
 
+// ************* send card message*****************
+gsap.to('#inner-card-page>nav',{
+  scrollTrigger:{
+    trigger:'#inner-card-page>nav',
+    scroller:'#main',
+    start:'top 0%',
+    end:'bottom top',
+    // markers:true,
+    scrub:.15
+  },
+  y:-50,
+  duration:1
+})
+
 // ************** page 6 a****************
 let touch = document.querySelector('#inner-p6 a')
 let img1 = document.querySelector('#p-6-img1')
@@ -160,10 +174,6 @@ touch.addEventListener('mouseleave',function(){
 
 })
 
-// card select option
-
-
-
 
 
 // // page2
@@ -202,7 +212,16 @@ imgNav.addEventListener('mouseleave',function(){
   imgNav.style.rotate = '10deg'
 })
 
-// lines page-5
+
+
+// card select option
+
+// let clr_theme = document.querySelectorAll('#left-msg>h5')
+// console.log(clr_theme);
+
+
+
+
 
 
 
