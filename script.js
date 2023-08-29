@@ -130,6 +130,16 @@ gsap.to('#inner-card-page>nav',{
   duration:1
 })
 
+// card message page loader
+gsap.to('#loader',{
+  y:'-150%',
+  duration:3
+})
+gsap.to('#wrapper-card',{
+  y:'-10%',
+  duration:1
+})
+
 // ************** page 6 a****************
 let touch = document.querySelector('#inner-p6 a')
 let img1 = document.querySelector('#p-6-img1')
@@ -212,12 +222,45 @@ imgNav.addEventListener('mouseleave',function(){
   imgNav.style.rotate = '10deg'
 })
 
+// *************** creating loader **********************
+let toadertl = gsap.timeline()
+
+function timeloader(){
+  let a = 0
+  setInterval(() => {
+    a = a + Math.floor(Math.random()*10)
+    if (a < 99) {
+      document.querySelector('#loader-home>h1').innerHTML = `${a}%`  
+    } else {
+      a = 99
+      document.querySelector('#loader-home>h1').innerHTML = `${a}%` 
+    }
+  }, 150);
+}
+timeloader('#loader-home h1',{
+  delay:0.5,
+  duration:1,
+  onStart:timeloader()
+})
+toadertl.to('#loader-home>#gifimg',{
+  delay:2,
+  duration:.1,
+  opacity:1
+})
+toadertl.to('#loader-home>#flyingFlag',{
+  delay:1,
+  duration:.1,
+  opacity:1
+})
+toadertl.to('#loader-home',{
+  y:'-100vh',
+  duration:1.5,
+  delay:1,
+})
 
 
-// card select option
 
-// let clr_theme = document.querySelectorAll('#left-msg>h5')
-// console.log(clr_theme);
+
 
 
 

@@ -1,8 +1,19 @@
 
+/* ********loader ************* */
+#loader{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--page-color);
+    position: absolute;
+    top: 0%;
+    z-index: 999;
+}
+
+/* **************Container***************** */
 #container{
     width: 100vw;
     height: 100vh;
-    background-color: red;
+    /* background-color: red; */
     position: fixed;
 }
 #img-container{
@@ -39,7 +50,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 3vw;
-    z-index: 999;
+    z-index: 1;
     position: absolute;
     top: 5%;
 }
@@ -172,6 +183,7 @@
     width: 90%;
     height: 65%;
     background-color: var(--page-color);
+    /* background-color: darkgreen; */
     margin-top: 12vw;
     display: flex;
     align-items: center;
@@ -258,36 +270,45 @@ form>button:hover{
     border: .1vw solid var(--bg-color);
     color: var(--bg-color);
 }
+
+/* ********** footer **************** */
 #message-card-link{
     width: 100%;
     position: relative;
+    cursor: pointer;
 }
-#message-card-link>#links{
+#message-card-link>#links-msg{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 3vw;
-    padding: 0 3vw;
+    padding: 0 4vw;
 }
-#links>#left-msg>.msg-card{
-    width: 30px;
-    height: 30px;
+#links-msg>#left-msg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+}
+#links-msg>#left-msg>.msg-card{
+    width: 25px;
+    height: 25px;
     background-color: white;
     border-radius: 50%;
     padding: 0 1vw;
 }
-#links>#left>#darkgreen{
+#links-msg>#left-msg>.darkgreen{
     background-color: var(--page-color);
 }
-#links>#left>#royalblue{
+#links-msg>#left-msg>#royalblue{
     background-color: var(--page4-color);
 }
-#links>#left>#pink{
+#links-msg>#left-msg>.pink{
     background-color: var(--page3-color);
 }
-#links>#left>p{
+#links-msg>#left-msg>p{
     font-size: 1.3vw;
-    font-weight: 900;
-    font-family: c;
+    font-family: b;
     color: var(--bg-color);
 }
+
+/* select theme button */
