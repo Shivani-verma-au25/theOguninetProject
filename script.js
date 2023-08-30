@@ -133,7 +133,7 @@ gsap.to('#inner-card-page>nav',{
 // card message page loader
 gsap.to('#loader',{
   y:'-150%',
-  duration:3
+  duration:4
 })
 gsap.to('#wrapper-card',{
   y:'-10%',

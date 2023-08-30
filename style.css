@@ -138,6 +138,8 @@ nav{
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    gap: .6vw;
+    position: relative;
 }
 #main-links>h2>a{
     font-size: 1vw;
@@ -146,14 +148,11 @@ nav{
     color: var(--text-color);
 }
 #main-links>#svgwork{
-    width: 24%;
+    width: 33%;
     height: 100%;
-    /* background-color: red; */
     position:absolute;
     top: 0%;
     left: 0%;
-    /* z-index: 999; */
-    /* background-color: transparent; */
 }
 #zick-zack{
     width: 100%;
@@ -174,12 +173,12 @@ nav{
 }
 
 #main-links>#svgabout{
-    width: 24%;
+    width: 30%;
     height: 100%;
     /* background-color: red; */
     position:absolute;
     top: 0%;
-    left: 26%;
+    left: 40%;
     transition: all .4s ease;
 }
 #main-links>#svgabout:hover{
@@ -187,12 +186,12 @@ nav{
     cursor: pointer;
 }
 #main-links>#svgmain{
-    width: 25%;
+    width: 30%;
     height: 100%;
     background-color: transparent;
     position:absolute;
-    top: 10%;
-    left: 54%;
+    top: 0%;
+    left: 74%;
 }
 #circle{
     width: 100%;
